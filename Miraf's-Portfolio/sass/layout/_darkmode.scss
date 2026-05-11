@@ -1,0 +1,98 @@
+// Dark Mode - Global Improvements
+body.dark-mode {
+  .header {
+    background-color: $dark-mode-surface;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .theme-toggle,
+  .menu-toggle {
+    color: $dark-mode-text;
+  }
+
+  .nav-links {
+    background-color: $dark-mode-surface;
+  }
+
+  .theme-toggle:hover, .menu-toggle:hover {
+    background-color: rgba(77, 163, 255, 0.2);
+  }
+
+  .logo {
+    color: #4da3ff;
+  }
+
+  .nav-links a,
+  .nav-links a.active {
+    color: $dark-mode-text;
+  }
+
+  // All Hero Sections
+  .hero,
+  .about-hero,
+  .projects-hero,
+  .skills-hero,
+  .contact-hero {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    
+    h1, h2, p {
+      color: $dark-mode-text;
+    }
+  }
+
+  // Projects Page Fixes
+  .project-card {
+    background: $dark-mode-surface;
+    color: $dark-mode-text;
+
+    .project-info h3 {
+      color: $dark-mode-text;
+    }
+
+    p {
+      color: $dark-mode-gray;
+    }
+  }
+
+  // Skills Page Fixes
+  .skill-card {
+    background: $dark-mode-surface;
+    color: $dark-mode-text;
+
+    h3 {
+      color: $dark-mode-text;
+    }
+
+    p {
+      color: $dark-mode-gray;
+    }
+
+    i {
+      color: #4da3ff;
+    }
+  }
+
+  .tech-stack span {
+    background: #1e3a8a;
+    color: #93c5fd;
+  }
+
+  .footer {
+    background-color: #0a0a0a;
+  }
+
+  // General form & text fixes
+  .about-text h2,
+  .about-text h3,
+  .contact-info h2,
+  .contact-info h4 {
+    color: $dark-mode-text;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    background: $dark-mode-surface;
+    color: $dark-mode-text;
+    border-color: #444;
+  }
+}
