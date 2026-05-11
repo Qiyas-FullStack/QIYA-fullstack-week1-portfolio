@@ -14,7 +14,7 @@ Welcome to the first week of your QIYA Full-Stack Development journey! This week
 ### 1. Clone the Repository
 First, clone this repository to your local machine:
 ```bash
-git clone https://github.com
+git clone https://github.com/Qiyas-FullStack/QIYA-fullstack-week1-portfolio.git
 cd QIYA-fullstack-week1-portfolio
 ```
 
