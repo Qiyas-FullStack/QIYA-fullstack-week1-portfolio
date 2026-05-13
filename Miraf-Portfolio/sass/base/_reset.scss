@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  line-height: 1.6;
+  color: $dark;
+  background-color: $white;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+// Dark Mode
+body.dark-mode {
+  background-color: $dark-mode-bg;
+  color: $dark-mode-text;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
