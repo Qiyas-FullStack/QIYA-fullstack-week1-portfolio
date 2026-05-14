@@ -9,17 +9,14 @@ body{
     position:sticky;
     top:0;
     width:100%;
+    display:flex;
+    justify-content:center;
     background: rgba(255,255,255,0.75);
     backdrop-filter: blur(10px);
     border-bottom:1px solid rgba(0,0,0,0.06);
 }
 
 /* NAVBAR INNER CONTAINER */
-.navbar{
-    display:flex;
-    justify-content:center;
-}
-
 .navbar .container{
     width:100%;
     max-width:1200px;
@@ -134,5 +131,129 @@ body{
 
     .nav-menu.active{
         transform: translateY(0);
+    }
+}
+
+
+/* HERO SECTION */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1px 10%;
+    min-height:90vh;
+    gap:50px;
+}
+
+/* LEFT TEXT SIDE */
+.hero-text{
+    width:60%;
+}
+
+/* RIGHT IMAGE SIDE */
+.hero-image{
+    width:40%;
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid #0ea5e9;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* TEXT STYLES */
+.intro{
+    font-size:18px;
+    color:#64748b;
+}
+
+.title{
+    font-size:48px;
+    font-weight:700;
+    margin:10px 0;
+}
+
+.subtitle{
+    font-size:24px;
+    color:#0ea5e9;
+    margin-bottom:15px;
+}
+
+.description{
+    font-size:16px;
+    line-height:1.7;
+    color:#475569;
+    max-width:500px;
+}
+
+/* BUTTON */
+.hero-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#0ea5e9;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.hero-btn:hover{
+    background:#0284c7;
+    transform:translateY(-2px);
+}
+
+/* SOCIAL ICONS */
+.social-icons{
+    margin-top:20px;
+    display:flex;
+    gap:15px;
+}
+
+.social-icons a{
+    font-size:20px;
+    text-decoration:none;
+    background:#f1f5f9;
+    padding:10px;
+    border-radius:50%;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    background:#0ea5e9;
+    color:white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:60px 8%;
+    }
+
+    .hero-text,
+    .hero-image{
+        width:100%;
+    }
+
+    .hero-image img{
+        width:250px;
+        height:250px;
+    }
+
+    .description{
+        margin:0 auto;
+    }
+
+    .social-icons{
+        justify-content:center;
     }
 }
