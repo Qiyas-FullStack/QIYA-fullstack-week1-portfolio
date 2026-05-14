@@ -15,3 +15,17 @@ navLinks.forEach(link => {
         navMenu.classList.remove("active");
     });
 });
+
+const reveals = document.querySelectorAll(".reveal-left, .reveal-right");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+
+    if(elementTop < windowHeight - 100){
+        el.style.opacity = "1";
+        el.style.transform = "translateX(0)";
+    }
+  });
+});
