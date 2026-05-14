@@ -1,0 +1,79 @@
+/* GLOBAL FONT */
+body{
+    font-family: 'Poppins', sans-serif;
+    background:#ffffff;
+    color:#0f172a;
+}
+/* NAVBAR WRAPPER */
+.navbar{
+    position:sticky;
+    top:0;
+    width:100%;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid rgba(0,0,0,0.06);
+}
+
+/* NAVBAR INNER CONTAINER */
+.navbar{
+    display:flex;
+    justify-content:center;
+}
+
+.navbar .container{
+    width:100%;
+    max-width:1200px;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* LOGO */
+.logo{
+    font-size:26px;
+    font-weight:700;
+    letter-spacing:1px;
+    cursor:pointer;
+    color:#0f172a;
+}
+
+.logo-highlight{
+    color:#0ea5e9;
+    font-size:32px;
+}
+
+/* MENU */
+.nav-menu{
+    list-style:none;
+    display:flex;
+    gap:28px;
+}
+
+.nav-menu a{
+    text-decoration:none;
+    color:#334155;
+    font-weight:500;
+    position:relative;
+    transition:0.3s;
+}
+
+/* underline animation */
+.nav-menu a::after{
+    content:'';
+    position:absolute;
+    width:0%;
+    height:2px;
+    left:0;
+    bottom:-6px;
+    background:#0ea5e9;
+    transition:0.3s ease;
+}
+
+.nav-menu a:hover{
+    color:#0f172a;
+}
+
+.nav-menu a:hover::after{
+    width:100%;
+}
