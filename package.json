@@ -1,0 +1,24 @@
+{
+  "name": "qiya-fullstack-week1-portfolio",
+  "version": "1.0.0",
+  "description": "Welcome to the first week of your QIYA Full-Stack Development journey! This week, you will build the foundation of your professional online presence by creating a personal portfolio page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qiyas-FullStack/QIYA-fullstack-week1-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Qiyas-FullStack/QIYA-fullstack-week1-portfolio/issues"
+  },
+  "homepage": "https://github.com/Qiyas-FullStack/QIYA-fullstack-week1-portfolio#readme",
+  "dependencies": {
+    "sass": "^1.99.0"
+  }
+}

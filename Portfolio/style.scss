@@ -1,0 +1,44 @@
+$primary-color: #222;
+$background-color: #f4f4f4;
+$text-color: #333;
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: $background-color;
+    color: $text-color;
+}
+
+header {
+    text-align: center;
+    padding: 40px;
+    background-color: $primary-color;
+    color: white;
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+        background: #eee;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+    }
+}
