@@ -29,3 +29,19 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+
+const revealUp = document.querySelectorAll(".reveal-up");
+
+window.addEventListener("scroll", () => {
+  revealUp.forEach((el, i) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+
+    if(elementTop < windowHeight - 100){
+        setTimeout(()=>{
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+        }, i * 150);
+    }
+});
