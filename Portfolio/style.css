@@ -1,40 +1,40 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 header {
-    text-align: center;
-    padding: 40px;
-    background-color: #222;
-    color: white;
+  text-align: center;
+  padding: 40px;
+  background-color: #222;
+  color: white;
 }
-
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
+header .profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 section {
-    padding: 20px;
-    margin: 20px;
-    background: white;
-    border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  background: white;
+  border-radius: 10px;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
+}
+ul li {
+  background: #eee;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-li {
-    background: #eee;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-}
+/*# sourceMappingURL=style.css.map */
