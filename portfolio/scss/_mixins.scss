@@ -1,0 +1,16 @@
+@mixin respond($max-width) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin navbar-first-link-active {
+  .navbar a:nth-child(1) {
+    color: var(--main-color);
+  }
+
+  .navbar a.active::before {
+    background: var(--main-color);
+    opacity: 0.7;
+  }
+}

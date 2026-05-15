@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuhemin's Portfolio</title>
+    <link
+      rel="shortcut icon"
+      href="./images/pilot-girl-logo.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" href="css/socialmedia.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init('YOUR_PUBLIC_KEY');
+      })();
+    </script>
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#" class="logo">
+        <img
+          src="./images/pilot-girl.png"
+          alt="Nuhemin's Portfolio logo"
+          width="150"
+          class="logo-dark"
+        />
+      </a>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+       <!--<a href="#testimonial">Testimonial</a>--> 
+       <!-- <a href="blogpage.html">Blog</a>-->
+        <a href="#contact">Contact</a>
+      <!--<a href="login_form.php">Log In</a>-->
+      </nav>
+
+      <div class="bx bx-moon" id="darkMode-icon"></div>
+
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Hello, I am</h3>
+        <h1>Nuhemin Michael</h1>
+        <p>
+          I'm a web developer who loves to create beautiful and
+          functional websites for people who want to make a difference in the
+          world.
+        </p>
+        <p>
+          I graduated from St.Mary's University , with a degree in Computer Science. I'm passionate about web
+          development and love to learn new technologies.
+        </p>
+        <p>
+          Other than web Development I'm also interested in Planes and I'm a
+          huge fan of aviation. I love to travel and explore new places.
+        </p>
+
+        <div class="social-media">
+          <a href="#"><span class="bx bxl-facebook"></span></a>
+          <a href="#"><span class="bx bxl-twitter"></span></a>
+          <a
+            href="https://www.instagram.com/future_pilot_girl.plane?igsh=MTF3MGVrMzhjbGhwdQ%3D%3D&utm_source=qr"
+            ><span class="bx bxl-instagram-alt"></span
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/nuhemin-alemayehu-32960b30b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+            ><span class="bx bxl-linkedin"></span
+          ></a>
+        </div>
+
+        <a href="./assets/files/nuhemin CV resume.pdf" class="btn" download>Download CV</a>
+      </div>
+
+      <div class="profession-container">
+        <div class="profession-box">
+          <div class="profession" style="--i: 0">
+            <i class="bx bx-code-alt"></i>
+            <h3>Web Developer</h3>
+          </div>
+          <div class="profession" style="--i: 1">
+            <i class="bx bx-palette"></i>
+            <h3>Graphic Designer</h3>
+          </div>
+          <div class="profession" style="--i: 2">
+            <i class="bx bx-palette"></i>
+            <h3>Web Designer</h3>
+          </div>
+          <div class="profession" style="--i: 3">
+            <i class="bx bx-code-alt"></i>
+            <h3>Front-End</h3>
+          </div>
+
+          <div class="circle"></div>
+        </div>
+
+        <div class="overlay"></div>
+      </div>
+
+      <div class="home-img">
+        <img src="images/home.png" alt="" />
+      </div>
+    </section>
+
+    <!-- about section design -->
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="images/about.jpg" alt="" />
+      </div>
+
+      <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3>
+          Hi there, welcome to my website! I'm Nuhemin, a passionate web
+          developer who enjoys learning new technologies and solving problems
+          with code!
+        </h3>
+        <p>
+          This website is my personal blog where I write about web development
+          topics that interest me and inspire me.
+        </p>
+        <p>
+          Thank you for visiting my website and getting to know me better. I
+          hope you enjoyed reading my blog posts and found them useful and
+          informative. If you want to read more of my posts, subscribe to my
+          newsletter where I send weekly updates on web development trends and
+          tips. If you have any feedback or suggestions, please let me know. I'd
+          love to hear from you.
+        </p>
+        <a href="blogpage.html" class="btn">Read More</a>
+      </div>
+    </section>
+
+    <!-- services section design -->
+    <section class="services" id="services">
+      <h2 class="heading">My <span>Services</span></h2>
+
+      <div class="services-container">
+        <div class="services-box">
+          <i class="bx bx-code-alt"></i>
+          <h3>Web Development</h3>
+          <p>
+            web development with new technologies and solving problems with
+            code! If you want to create a beautiful and functional website for
+            your business or personal use, I can help you achieve your goals.
+          </p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+        <div class="services-box">
+          <i class="bx bxs-paint"></i>
+          <h3>Graphic Design</h3>
+          <p>
+            Graphics design with cool features! If you want to create a visually
+            appealing and professional design for your brand or project, create
+            stunning graphics that will make your project stand out. I can help
+            you bring your ideas to life.
+          </p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">Latest <span>Project</span></h2>
+
+      <div class="portfolio-container">
+        <!-- Portfolio php 
+        <?php
+        // Fetch portfolio items
+        include('db.php');
+        $sql = "SELECT * FROM portfolio";
+        $stmt = $pdo->query($sql); while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+        { echo "
+        <div class="portfolio-box">
+          <img src="<?php echo $row['image_url']; ?>" alt="" />
+          <div class="portfolio-layer">
+            <h4>{$row['title']}</h4>
+            <p>{$row['description']}</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        ?>
+      -->
+        <div class="portfolio-box">
+          <img src="images/portfolio1.jpg" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>ever-wonder-movie-website</h4>
+            <p>
+              Movie website. I developed a website to watch movies. It features
+              a user-friendly interface and a vast collection of movies.
+            </p>
+            <a href="https://github.com/Captnuhamin/ever-wonder-movie-website/blob/master/movie.js"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <!--  <div class="portfolio-box">
+          <img src="images/portfolio2.jpg" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>YouTube Clone.</h4>
+            <p>YouTube Clone. a clone for youtube using HTML and CSS</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div> -->
+       
+        <div class="portfolio-box">
+          <img src="images/portfolio3.jpg" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>Aple Clone</h4>
+            <p>Apple Clone. a clone for iphone page using HTML and CSS</p>
+            <a href="https://github.com/Captnuhamin/apple-clone"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio4.jpg" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>Blood Donation</h4>
+            <p>Blood Donation website. A simple website to help people find blood donors nearby.</p>
+            <a href="https://github.com/Captnuhamin/Blood-Donation"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+       <!-- <div class="portfolio-box">
+          <img src="images/portfolio5.jpg" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>to be build</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio6.jpg" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>to be build</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div> -->
+        
+      </div>
+    </section>
+
+    <!-- testimonial design -->
+   <!-- <section class="testimonial" id="testimonial">
+      <div class="testimonial-container">
+        <h2 class="heading">Valuable <span>Testimonial</span></h2>
+
+        <div class="testimonial-wrapper">
+          <div class="testimonial-box mySwiper">
+            <div class="testimonial-content swiper-wrapper">
+              <div class="testimonial-slide swiper-slide">
+                <img src="images/test1.jpeg" alt="" />
+                <h3>Vivian Lau</h3>
+                <p>
+                  Nuhemin is an exceptional web developer who consistently
+                  delivers high-quality work. Her attention to detail and
+                  dedication to her craft are evident in every project she
+                  undertakes. She is a pleasure to work with and always goes
+                  above and beyond to ensure client satisfaction.
+                </p>
+              </div>
+              <div class="testimonial-slide swiper-slide">
+                <img src="images/test2.jpeg" alt="" />
+                <h3>Nicolas Russo</h3>
+                <p>
+                  Nuhemin's graphic design skills are truly remarkable. She has
+                  a keen eye for aesthetics and a talent for creating visually
+                  stunning designs. Her creativity and professionalism make her
+                  an invaluable asset to any project. I highly recommend her for
+                  any graphic design needs.
+                </p>
+              </div>
+              <div class="testimonial-slide swiper-slide">
+                <img src="images/test3.jpeg" alt="" />
+                <h3>Hannah Grace</h3>
+                <p>
+                  Nuhemin is a highly skilled front-end developer with a keen
+                  eye for detail. Her ability to transform complex requirements
+                  into user-friendly interfaces is impressive. She is dedicated,
+                  innovative, and always up-to-date with the latest trends in
+                  web development. I highly recommend her for any front-end
+                  development projects.
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  -->
+    <!-- contact section design -->
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Me!</span></h2>
+
+     <form id="contact-form">
+  <div class="input-box">
+    <input type="text" name="user_name" placeholder="Full Name" required />
+    <input type="email" name="user_email" placeholder="Email Address" required />
+  </div>
+  <div class="input-box">
+    <input type="number" name="user_phone" placeholder="Mobile Number" required />
+    <input type="text" name="subject" placeholder="Email Subject" required />
+  </div>
+  <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+  <input type="submit" value="Send Message" class="btn" />
+
+      <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+    .then(() => {
+      alert('Message sent successfully!');
+      this.reset();
+    }, (error) => {
+      alert('Failed to send message. Please try again later.');
+      console.error('EmailJS Error:', error);
+    });
+});
+
+      </script>
+      </form>
+      
+    </section>
+
+    <div class="center">
+      <div class="icons first">
+        <li>
+          <a href="#"><span class="fab fa-facebook-f"></span></a>
+        </li>
+        <li>
+          <a href="#"><span class="fab fa-twitter"></span></a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/future_pilot_girl.plane?igsh=MTF3MGVrMzhjbGhwdQ%3D%3D&utm_source=qr"
+            ><span class="fab fa-instagram"></span
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/nuhemin-alemayehu-32960b30b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+            ><span class="fab fa-linkedin-in"></span
+          ></a>
+        </li>
+        <li>
+          <a href="https://github.com/Captnuhamin"
+            ><span class="fab fa-github"></span
+          ></a>
+        </li>
+        <script>
+          $(".first li").click(function () {
+            $(this).toggleClass("shadow-1").siblings();
+            $(this).toggleClass("fill-color").siblings();
+          });
+          $(".second li").click(function () {
+            $(this).toggleClass("shadow-2").siblings();
+            $(this).toggleClass("fill-color").siblings();
+          });
+        </script>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2024 | All Rights Reserved.</p>
+      </div>
+
+      <div class="footer-iconTop">
+        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

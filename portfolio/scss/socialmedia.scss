@@ -1,0 +1,72 @@
+@use "variables" as *;
+
+body {
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  width: 100%;
+}
+
+.icons {
+  display: flex;
+  margin: 40px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+li {
+  position: relative;
+  list-style: none;
+  height: 70px;
+  width: 70px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background: $social-bg;
+  cursor: pointer;
+  box-shadow: -3px -3px 7px $social-shadow-light, 3px 3px 5px $social-shadow-dark;
+
+  a {
+    line-height: 70px;
+    font-size: 27px;
+    color: $social-icon-muted;
+  }
+
+  $brand-colors: (
+    1: #4267b2,
+    2: #1da1f2,
+    3: #e1306c,
+    4: #2867b2,
+    5: #333,
+  );
+
+  @each $n, $color in $brand-colors {
+    &:nth-child(#{$n}).fill-color a {
+      color: $color;
+    }
+  }
+}
+
+.first li.shadow-1 {
+  box-shadow: inset -3px -3px 7px $social-shadow-light,
+    inset 3px 3px 5px $social-shadow-dark;
+
+  a {
+    font-size: 25px;
+  }
+}
+
+.second li.shadow-2 a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 55px;
+  width: 55px;
+  line-height: 55px;
+  border-radius: 50%;
+  background: $social-bg;
+  font-size: 24px;
+  box-shadow: inset -3px -3px 7px $social-shadow-light,
+    inset 3px 3px 5px $social-shadow-dark;
+}

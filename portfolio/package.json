@@ -1,0 +1,11 @@
+{
+  "name": "nuhemin_portfolio",
+  "private": true,
+  "scripts": {
+    "sass": "sass scss:css --style expanded",
+    "sass:watch": "sass scss:css --watch --style expanded"
+  },
+  "devDependencies": {
+    "sass": "^1.89.0"
+  }
+}
