@@ -3,42 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Dagmawi Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 </head>
 <body>
 
-    <header>
-        <img src="assets/profile.jpg" alt="Profile Picture" class="profile-img">
+    <nav>
 
-        <h1>Dagmawi Getaneh</h1>
-        <p>Full-Stack Development Student</p>
-    </header>
-
-    <section class="about">
-        <h2>About Me</h2>
-        <p>
-            I am passionate about software development, networking,
-            and building modern web applications.  
-        </p>
-    </section>
-
-    <section class="skills">
-        <h2>Skills</h2>
+        <h2 class="logo">Dagm.</h2>
 
         <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Git & GitHub</li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
+
+        <button id="theme-toggle">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+    </nav>
+
+
+    <header>
+
+        <img src="assets/profile.jpg" alt="Profile Picture" class="profile-img">
+
+        <h1>Hello, I'm Dagmawi Getaneh</h1>
+
+        <p class="typing-text"></p>
+
+        <a href="#contact" class="btn">Contact Me</a>
+
+    </header>
+
+
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            I am a Full-Stack Development student currently learning modern web technologies.
+            I enjoy building responsive applications, networking systems, and solving technical problems.
+            My interests include software engineering, cybersecurity, networking, and IoT.
+        </p>
+
+        <div class="stats">
+
+            <div class="card">
+                <h3>1+</h3>
+                <p>Years Learning Tech</p>
+            </div>
+
+            <div class="card">
+                <h3>5+</h3>
+                <p>Projects Built</p>
+            </div>
+
+            <div class="card">
+                <h3>100%</h3>
+                <p>Passion for Coding</p>
+            </div>
+
+        </div>
+
     </section>
 
-    <section class="contact">
-        <h2>Contact</h2>
 
-        <p>Email: dagi.getaneh3@gmail.com</p>
-        <p>Phone: +251951102168</p>
+    <section id="skills">
+
+        <h2>Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <i class="fa-brands fa-html5"></i>
+                <h3>HTML</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-css3-alt"></i>
+                <h3>CSS / Sass</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-js"></i>
+                <h3>JavaScript</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-git-alt"></i>
+                <h3>Git & GitHub</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Networking</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+                <h3>Café Inventory System</h3>
+
+                <p>
+                    A system designed to manage café products, stock, and sales efficiently.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Networking Projects</h3>
+
+                <p>
+                    Worked on node configuration and troubleshooting.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+
+                <p>
+                    A responsive portfolio built using HTML, Sass, and JavaScript.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="contact">
+
+        <h2>Contact Me</h2>
+
+        <form>
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea placeholder="Your Message"></textarea>
+
+            <button type="submit" class="btn">
+                Send Message
+            </button>
+
+        </form>
+
     </section>
 
     <script src="script.js"></script>
