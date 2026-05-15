@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contact | Abel Portfoile </title>
+    <link rel="shortcut icon" href="img/logoa.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <header id="header-inner"> 
+    <div class="container"> 
+    <nav id="main-nav"> 
+    <img src="img/logo.png" alt="my Portfoile" id="logo">
+    <ul>
+        <li> <a href="index.html" > Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="contact.html"class="current">Contact</a></li>
+    </ul>
+</nav>
+</header>
+<!--Section A;Contact Form-->
+<section id="contact-a" class="text-center py-3">
+    <div class="container">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="bottom-line"></div>
+    <p class="lead" id="contact-lead">Here is how you Can reach me</p>
+      <form id="contactForm" novalidate>
+        <div class="text-fields">
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="text-input name-input"
+              placeholder="Name"
+              required
+              autocomplete="name"
+              aria-describedby="name-error"
+              aria-invalid="false"
+            />
+            <small class="error-message" id="name-error"></small>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              class="text-input subject-input"
+              placeholder="Subject"
+              required
+              autocomplete="off"
+              aria-describedby="subject-error"
+              aria-invalid="false"
+            />
+            <small class="error-message" id="subject-error"></small>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="text-input email-input"
+              placeholder="Email Address"
+              required
+              autocomplete="email"
+              aria-describedby="email-error"
+              aria-invalid="false"
+            />
+            <small class="error-message" id="email-error"></small>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="text-input phone-input"
+              placeholder="Phone Number"
+              autocomplete="tel"
+              aria-describedby="phone-error"
+              aria-invalid="false"
+            />
+            <small class="error-message" id="phone-error"></small>
+          </div>
+
+          <div class="form-group">
+            <textarea
+              id="message"
+              name="message"
+              class="text-input message-input"
+              placeholder="Enter Message"
+              rows="6"
+              required
+              aria-describedby="message-error"
+              aria-invalid="false"
+            ></textarea>
+            <small class="error-message" id="message-error"></small>
+          </div>
+        </div>
+        <div id="success-popup" class="popup-overlay" aria-hidden="true" tabindex="-1" style="display:none;">
+            <div class="popup-content" tabindex="-1">
+                <h2 id="sucess">Message Sent Successfully </h2>
+                
+                <!-- <a href="index.html" id="popup-back" class="popup-link">← Back to Home</a> -->
+            </div>
+        </div>
+        <button type="submit" class="btn-dark">Submit</button>
+        <p id="form-message"></p>
+        <script src="js/Validation.js" defer></script>
+      </form>
+</div>
+</section>
+
+<!--Section B;Contact Form-->
+<section id="contact-b" class="py-3 bg-dark">
+    <div class="container">
+        <div class="contact-info">
+            <div>
+                <i class="fas fa-envelope fa-2x"></i>
+                <h3>Email</h3>
+                <p>ab@gmail.com</p>
+            </div>
+            <div>
+                <i class="fas fa-phone fa-2x"></i>
+                <h3>Phone</h3>
+                <p>+2519-7060650</p>
+            </div>
+            <div>
+                <i class="fas fa-address-card fa-2x"></i>
+                <h3>Address</h3>
+                <p>Addis Ababa,Ethiopia</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--section C Tagline-->
+<section id="contact-c" class="bg-main py-4">
+    <div class="container">
+    <h1>let's Start Your Next Project</h1>
+    </div>
+</section>
+
+<!--Footer-->
+<footer id="main-footer">
+    <div class="footer-content container"> 
+    <p>Copyright &copy; 2026 All Right</p>   
+   <div class="social">
+    <i class="fab fa-facebook fa-2x"></i>
+    <i class="fab fa-twitter fa-2x"></i>
+    <i class="fab fa-linkedin fa-2x"></i>
+    <i class="fab fa-github fa-2x"></i>
+</div> 
+</div>
+</footer>
+ 
+</body>
+</html>
