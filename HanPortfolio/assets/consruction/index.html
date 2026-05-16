@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arkan — Construction Finishing Materials</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sand: #c8a96e;
+      --sand-light: #e8d5b0;
+      --dark: #1a1610;
+      --dark-mid: #2c2418;
+      --warm-gray: #3d3530;
+      --cream: #f5f0e8;
+      --white: #ffffff;
+      --text-muted: #9a8878;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--dark);
+      color: var(--cream);
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(26,22,16,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200,169,110,0.15);
+      transition: background 0.3s;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--sand);
+    }
+    .logo span { color: var(--cream); font-weight: 400; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--sand); }
+    .nav-cta {
+      background: var(--sand);
+      color: var(--dark) !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 2px;
+    }
+    .nav-cta:hover { background: var(--sand-light) !important; color: var(--dark) !important; }
+
+    /* hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--cream); transition: 0.3s; }
+
+    #home {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1613545325278-f24b0cae1224?w=1600&auto=format&fit=crop') center/cover no-repeat;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, rgba(26,22,16,0.92) 45%, rgba(26,22,16,0.4) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      padding: 0 4rem;
+      animation: fadeUp 1s ease both;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--sand);
+      border-left: 2px solid var(--sand);
+      padding-left: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.4rem;
+      color: var(--white);
+    }
+    .hero-content h1 em {
+      font-style: italic;
+      color: var(--sand);
+    }
+    .hero-content p {
+      font-size: 1.1rem;
+      color: rgba(245,240,232,0.75);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--sand);
+      color: var(--dark);
+      padding: 0.9rem 2.2rem;
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--sand-light); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--cream);
+      padding: 0.9rem 2.2rem;
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(245,240,232,0.4);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--sand); color: var(--sand); }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      z-index: 2;
+      opacity: 0.5;
+    }
+    .scroll-hint span { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: var(--sand);
+      animation: scrollPulse 1.8s ease-in-out infinite;
+    }
+
+    section { padding: 7rem 4rem; }
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-weight: 300;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      max-width: 540px;
+    }
+
+    #services { background: var(--dark-mid); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5px;
+      margin-top: 4rem;
+      background: rgba(200,169,110,0.1);
+    }
+    .service-card {
+      background: var(--dark-mid);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      transition: background 0.3s;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--sand);
+      transition: width 0.4s ease;
+    }
+    .service-card:hover { background: #231e17; }
+    .service-card:hover::before { width: 100%; }
+    .service-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      filter: brightness(0.85);
+      transition: filter 0.3s;
+    }
+    .service-card:hover .service-img { filter: brightness(1); }
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      background: var(--dark);
+    }
+    .about-images {
+      position: relative;
+      height: 520px;
+    }
+    .about-img-main {
+      position: absolute;
+      top: 0; left: 0;
+      width: 75%;
+      height: 420px;
+      object-fit: cover;
+    }
+    .about-img-accent {
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 60%;
+      height: 260px;
+      object-fit: cover;
+      border: 4px solid var(--dark);
+    }
+    .about-badge {
+      position: absolute;
+      top: 50%; left: 60%;
+      transform: translate(-50%, -50%);
+      background: var(--sand);
+      color: var(--dark);
+      padding: 1.2rem 1.5rem;
+      text-align: center;
+      z-index: 3;
+    }
+    .about-badge strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      display: block;
+    }
+    .about-badge span { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; }
+
+    .about-text .section-desc { margin-bottom: 2rem; }
+    .about-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .about-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--cream);
+      font-size: 0.95rem;
+    }
+    .about-list li::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--sand);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    #contact { background: var(--dark-mid); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      margin-top: 4rem;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+    .contact-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+    .contact-icon {
+      width: 44px; height: 44px;
+      background: rgba(200,169,110,0.1);
+      border: 1px solid rgba(200,169,110,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+    .contact-item-text h4 {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 0.3rem;
+    }
+    .contact-item-text p {
+      color: var(--cream);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label {
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(200,169,110,0.2);
+      color: var(--cream);
+      padding: 0.9rem 1.1rem;
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--sand); }
+    .form-group select option { background: var(--dark-mid); }
+    .form-group textarea { height: 130px; }
+
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(200,169,110,0.12);
+      padding: 2.5rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--sand);
+    }
+    footer p { color: var(--text-muted); font-size: 0.82rem; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.6); transform-origin: top; }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--dark-mid); padding: 1.5rem 2rem; gap: 1.5rem; }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      section { padding: 4.5rem 1.5rem; }
+      .hero-content { padding: 0 1.5rem; }
+      #about { grid-template-columns: 1fr; gap: 2rem; }
+      .about-images { height: 320px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="logo">ARKAN <span>Materials</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Construction Finishing Materials</div>
+    <h1>Building Spaces That<br><em>Last & Inspire</em></h1>
+    <p>Arkan supplies premium finishing materials for residential and commercial projects — from elegant tiles to durable flooring, paint, and façade solutions.</p>
+    <div class="btn-group">
+      <a href="#services" class="btn-primary">Our Materials</a>
+      <a href="#contact" class="btn-outline">Get a Quote</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="reveal">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Premium Finishing<br>Materials</h2>
+    <p class="section-desc">Everything you need to complete your space — sourced from trusted manufacturers, delivered with expert guidance.</p>
+  </div>
+
+  <div class="services-grid reveal">
+
+    <div class="service-card">
+      <img class="service-img"
+        src="https://images.unsplash.com/photo-1615873968403-89e068629265?w=600&auto=format&fit=crop"
+        alt="Tiles & Ceramics" loading="lazy"/>
+      <div class="service-icon">🪨</div>
+      <h3>Tiles & Ceramics</h3>
+      <p>Floor and wall tiles in porcelain, ceramic, and natural stone — for every style, from minimalist to ornate.</p>
+    </div>
+
+    <div class="service-card">
+      <img class="service-img"
+        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop"
+        alt="Flooring" loading="lazy"/>
+      <div class="service-icon">🪵</div>
+      <h3>Flooring Solutions</h3>
+      <p>Hardwood, laminate, vinyl, and engineered flooring. Durable, beautiful, and suited to any space or budget.</p>
+    </div>
+
+    <div class="service-card">
+      <img class="service-img"
+        src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&auto=format&fit=crop"
+        alt="Paints & Coatings" loading="lazy"/>
+      <div class="service-icon">🎨</div>
+      <h3>Paints & Coatings</h3>
+      <p>Interior and exterior paints, primers, and specialty coatings. A full colour range with lasting protection.</p>
+    </div>
+
+    <div class="service-card">
+      <img class="service-img"
+        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&auto=format&fit=crop"
+        alt="Facade & Cladding" loading="lazy"/>
+      <div class="service-icon">🏗️</div>
+      <h3>Façade & Cladding</h3>
+      <p>Exterior cladding panels, stone veneer, and architectural finishes that define the look of your building.</p>
+    </div>
+
+    <div class="service-card">
+      <img class="service-img"
+        src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&auto=format&fit=crop"
+        alt="Sanitary & Bathroom" loading="lazy"/>
+      <div class="service-icon">🚿</div>
+      <h3>Sanitary & Bathroom</h3>
+      <p>Sinks, bathtubs, fittings and accessories from leading brands — functional design that elevates every bathroom.</p>
+    </div>
+
+    <div class="service-card">
+      <img class="service-img"
+        src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&auto=format&fit=crop"
+        alt="Insulation & Adhesives" loading="lazy"/>
+      <div class="service-icon">🧱</div>
+      <h3>Adhesives & Grouts</h3>
+      <p>Professional-grade adhesives, grouts, sealants, and waterproofing systems for lasting, quality finishes.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-images reveal">
+    <img class="about-img-main"
+      src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&auto=format&fit=crop"
+      alt="Arkan showroom" loading="lazy"/>
+    <img class="about-img-accent"
+      src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=600&auto=format&fit=crop"
+      alt="Material samples" loading="lazy"/>
+    <div class="about-badge">
+      <strong>100%</strong>
+      <span>Quality Guaranteed</span>
+    </div>
+  </div>
+
+  <div class="about-text reveal">
+    <div class="section-label">Who We Are</div>
+    <h2 class="section-title">Arkan — Built on<br>Quality & Trust</h2>
+    <p class="section-desc">
+      Arkan is a dedicated supplier of high-quality construction finishing materials. We work with contractors, architects, and homeowners to bring their vision to life — offering the right materials at the right time.
+    </p>
+    <p class="section-desc" style="margin-top:1rem;">
+      Our team is here to guide you through selection, provide technical advice, and ensure every project finishes to the highest standard.
+    </p>
+    <ul class="about-list" style="margin-top:2rem;">
+      <li>Wide range of finishing materials under one roof</li>
+      <li>Trusted local and international brands</li>
+      <li>Expert advice from our experienced team</li>
+      <li>Competitive pricing with flexible delivery</li>
+      <li>Serving residential and commercial clients</li>
+    </ul>
+    <br/>
+    <a href="#contact" class="btn-primary">Get in Touch</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="reveal">
+    <div class="section-label">Reach Us</div>
+    <h2 class="section-title">Let's Start Your Project</h2>
+    <p class="section-desc">Have a question, need a quote, or want to visit our showroom? We'd love to hear from you.</p>
+  </div>
+
+  <div class="contact-grid reveal">
+    <div class="contact-info">
+
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-item-text">
+          <h4>Visit Our Showroom</h4>
+          <p>Arkan Materials Store<br>Addis Ababa, Ethiopia</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div class="contact-item-text">
+          <h4>Call Us</h4>
+          <p>+251 910 98 7474<br>+251 982403608</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-item-text">
+          <h4>Email</h4>
+          <p>info@arkanconstruction.com</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-item-text">
+          <h4>Working Hours</h4>
+          <p>Mon – Sat: 8:00 AM – 5:00 PM<br>Sunday: Closed</p>
+        </div>
+      </div>
+
+    </div>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="Abebe" required/>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="Kebede" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="you@example.com" required/>
+      </div>
+      <div class="form-group">
+        <label for="interest">I'm Interested In</label>
+        <select id="interest">
+          <option value="">Select a category…</option>
+          <option>Tiles & Ceramics</option>
+          <option>Flooring Solutions</option>
+          <option>Paints & Coatings</option>
+          <option>Façade & Cladding</option>
+          <option>Sanitary & Bathroom</option>
+          <option>Adhesives & Grouts</option>
+          <option>General Inquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Describe your project or ask your question…"></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="align-self:flex-start; cursor:pointer;">Send Message</button>
+      <p id="form-success" style="display:none; color:var(--sand); font-size:0.9rem; margin-top:0.5rem;">
+        ✓ Your message has been sent. We'll be in touch soon!
+      </p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">ARKAN</div>
+  <p>© 2025 Arkan Construction Materials. All rights reserved.</p>
+  <p style="color:var(--text-muted); font-size:0.8rem;">Addis Ababa, Ethiopia</p>
+</footer>
+
+<script>
+  
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').style.background =
+      window.scrollY > 40
+        ? 'rgba(26,22,16,0.97)'
+        : 'rgba(26,22,16,0.85)';
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('form-success').style.display = 'block';
+    e.target.reset();
+  }
+</script>
+</body>
+</html>
