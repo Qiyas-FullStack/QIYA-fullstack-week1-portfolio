@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nahom Addisu | Electrical Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --primary: #6366f1; --cyber: #22d3ee; --success: #4ade80; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: #f8fafc; overflow-x: hidden; }
+        .mono { font-family: 'Space Mono', monospace; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        .float-icon { animation: float 6s infinite ease-in-out; }
+
+        .bg-grid {
+            background-image: radial-gradient(circle at 2px 2px, rgba(99, 102, 241, 0.15) 1.5px, transparent 0);
+            background-size: 32px 32px;
+        }
+
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            backdrop-filter: blur(12px);
+        }
+
+        .input-cyber {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .input-cyber:focus { 
+            border-color: var(--cyber); 
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.2); 
+            outline: none;
+            background: rgba(30, 41, 59, 0.7);
+        }
+
+        .scanline {
+            width: 100%; height: 100px;
+            background: linear-gradient(0deg, transparent, rgba(99, 102, 241, 0.05), transparent);
+            position: absolute; animation: scan 8s linear infinite; pointer-events: none;
+        }
+        @keyframes scan { from { top: -100px; } to { top: 100%; } }
+
+        /* Enhanced Success Toast Styling */
+        [data-fs-success] { display: none; }
+        .fs-finished [data-fs-success] { 
+            display: flex; 
+            animation: slideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .fs-finished form { display: none; }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-grid">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const App = () => {
+            const [mode, setMode] = useState("startup");
+
+            useEffect(() => {
+                if (window.formspree) {
+                    window.formspree('initForm', { formElement: '#contact-form', formId: 'mvzdbnll' });
+                }
+            }, []);
+
+            const content = {
+                startup: {
+                    tagline: "Startup-Focused Systems Engineer",
+                    about: "I build and ship production-ready systems quickly. Experienced in developing full-stack platforms, integrating hardware with software, and delivering scalable solutions under tight timelines.",
+                    projects: [
+                        {
+                            title: "Substation Monitoring System",
+                            desc: "Built and deployed an end-to-end IoT system for real-time monitoring of electrical infrastructure with rapid iteration and deployment cycles.",
+                            stack: "Firebase, Arduino, IoT, HTML/JS, Bootstrap",
+                            img: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=1200&q=80"
+                        },
+                        {
+                            title: "TinyML Edge Intelligence",
+                            desc: "Implemented lightweight ML models on microcontrollers, enabling real-time edge inference for embedded applications.",
+                            stack: "C++, PyTorch, TinyML, Fast Inference",
+                            img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                        }
+                    ],
+                    contact: "Looking to join fast-moving teams where I can take ownership, build systems from the ground up, and deliver impact quickly."
+                },
+                enterprise: {
+                    tagline: "Systems Architect | Scalable Infrastructure",
+                    about: "Focused on designing reliable, maintainable, and scalable systems. Experience in full-stack development, distributed systems principles, and hardware-software integration with emphasis on long-term stability.",
+                    projects: [
+                        {
+                            title: "Substation Monitoring System",
+                            desc: "Designed a structured IoT platform for monitoring electrical systems with emphasis on reliability, data integrity, and maintainability.",
+                            stack: "Firestore, Architecture, Systems Engineering",
+                            img: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=1200&q=80"
+                        },
+                        {
+                            title: "TinyML Edge Intelligence",
+                            desc: "Developed embedded ML solutions optimized for performance, consistency, and efficient resource utilization in constrained environments.",
+                            stack: "Low-level Optimization, Resource Management",
+                            img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                        }
+                    ],
+                    contact: "Open to roles focused on building scalable, reliable systems and contributing to long-term engineering excellence."
+                }
+            };
+
+            const icons = [
+                { class: "devicon-cplusplus-plain colored", delay: "0s" },
+                { class: "devicon-python-plain colored", delay: "1s" },
+                { class: "devicon-react-original colored", delay: "2.5s" },
+                { class: "devicon-arduino-plain colored", delay: "0.5s" },
+                { class: "devicon-firebase-plain colored", delay: "1.5s" },
+                { class: "devicon-typescript-plain colored", delay: "3s" },
+            ];
+
+            const activeData = content[mode];
+
+            return (
+                <div className="relative min-h-screen">
+                    <div className="scanline"></div>
+
+                    <nav className="fixed top-0 w-full z-50 glass-panel border-b border-white/5 px-6 py-4">
+                        <div className="max-w-7xl mx-auto flex justify-between items-center">
+                            <div className="flex items-center gap-3">
+                                <div className="w-3 h-3 bg-primary rounded-full animate-pulse shadow-[0_0_10px_#6366f1]"></div>
+                                <span className="mono text-xs font-bold tracking-widest uppercase hidden sm:inline">NAHOM_ADDISU // Electrical Engineer</span>
+                            </div>
+                            
+                            <div className="flex p-1 bg-slate-900 rounded-xl border border-white/10">
+                                <button onClick={() => setMode("startup")} 
+                                    className={`px-4 py-1.5 rounded-lg text-[10px] mono font-bold transition-all ${mode === 'startup' ? 'bg-primary text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}>
+                                    STARTUP_MODE
+                                </button>
+                                <button onClick={() => setMode("enterprise")} 
+                                    className={`px-4 py-1.5 rounded-lg text-[10px] mono font-bold transition-all ${mode === 'enterprise' ? 'bg-primary text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}>
+                                    ENTERPRISE_MODE
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <section className="pt-48 pb-20 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary text-[10px] font-bold mono mb-6 uppercase tracking-[0.2em]">
+                                NODE_ACTIVE // {mode.toUpperCase()}
+                            </div>
+                            
+                            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-8 leading-[1.1] md:leading-[0.9]">
+                                <span className="text-white">NAHOM</span><br/>
+                                <span className="text-[#22d3ee] italic">ADDISU</span>
+                            </h1>
+
+                            <p className="mono text-sm text-cyber font-bold mb-6 tracking-widest uppercase">
+                                {activeData.tagline}
+                            </p>
+                            <p className="text-slate-400 text-lg leading-relaxed max-w-lg mb-10">
+                                {activeData.about}
+                            </p>
+                            <div className="flex flex-wrap gap-4">
+                                <a href="#work" className="bg-primary text-white px-10 py-4 rounded-2xl font-bold text-sm shadow-xl shadow-primary/20 hover:-translate-y-1 transition-all uppercase tracking-widest">View_Works</a>
+                                <a 
+                                    href="https://drive.google.com/uc?export=download&id=1-nqximDIQVmN3tLhTWdF2ZCZsbB_rrjR" 
+                                    target="_blank" rel="noopener noreferrer"
+                                    className="glass-panel text-white px-10 py-4 rounded-2xl font-bold text-sm border border-white/10 hover:bg-white/5 transition flex items-center gap-3 uppercase tracking-widest"
+                                >
+                                    Download_CV 
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="relative h-[400px] flex items-center justify-center pointer-events-none">
+                            <div className="absolute inset-0 bg-primary/5 blur-3xl rounded-full"></div>
+                            <div className="grid grid-cols-3 gap-12 relative z-10">
+                                {icons.map((icon, idx) => (
+                                    <div key={idx} className="float-icon glass-panel p-6 rounded-3xl" style={{ animationDelay: icon.delay }}>
+                                        <i className={`${icon.class} text-5xl`}></i>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="work" className="py-24 px-6 max-w-7xl mx-auto">
+                        <div className="flex items-center gap-6 mb-16">
+                            <h2 className="text-4xl font-black italic tracking-tighter uppercase">Project_Log</h2>
+                            <div className="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent"></div>
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-10">
+                            {activeData.projects.map((p, i) => (
+                                <div key={i} className="group relative glass-panel rounded-[2.5rem] overflow-hidden hover:border-primary transition-all duration-500">
+                                    <div className="h-64 overflow-hidden bg-slate-900">
+                                        <img src={p.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" alt={p.title} />
+                                    </div>
+                                    <div className="p-10">
+                                        <h3 className="text-2xl font-bold mb-4">{p.title}</h3>
+                                        <p className="text-slate-400 mb-8 text-sm leading-relaxed">{p.desc}</p>
+                                        <div className="pt-6 border-t border-white/5">
+                                            <span className="mono text-[10px] text-slate-500 uppercase font-bold tracking-widest block mb-2">Technical Execution</span>
+                                            <p className="text-xs text-cyber font-semibold mono">{p.stack}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    <section id="contact" className="py-24 px-6 max-w-5xl mx-auto">
+                        <div className="glass-panel rounded-[3.5rem] p-8 md:p-16 lg:p-24 relative overflow-hidden">
+                            <div className="grid lg:grid-cols-2 gap-20 relative z-10">
+                                <div>
+                                    <h2 className="text-5xl font-black mb-8 uppercase tracking-tighter leading-tight">Contact Me</h2>
+                                    <p className="text-slate-400 mb-12 leading-relaxed italic border-l-2 border-primary pl-6">
+                                        "{activeData.contact}"
+                                    </p>
+                                    <div className="flex gap-4">
+                                        <a href="https://linkedin.com/in/nahom-addisu-05b5233a8/" target="_blank" className="p-4 glass-panel rounded-2xl hover:text-primary transition hover:scale-110"><i className="devicon-linkedin-plain text-xl"></i></a>
+                                        <a href="https://github.com/nahomaddisu71m-cpu" target="_blank" className="p-4 glass-panel rounded-2xl hover:text-primary transition hover:scale-110"><i className="devicon-github-original text-xl"></i></a>
+                                  
+                                    </div>
+                                </div>
+
+                                <div className="relative min-h-[400px] flex flex-col justify-center">
+                                    {/* Cool Success Notification */}
+                                    <div data-fs-success className="flex-col items-center justify-center text-center p-12 bg-emerald-500/10 border-2 border-emerald-400/30 rounded-[2.5rem] backdrop-blur-xl">
+                                        <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mb-6 mx-auto border border-emerald-400/50">
+                                            <svg className="text-emerald-400 w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-emerald-400 mb-2 mono">MESSAGE DELIVERED</h3>
+                                        <p className="text-slate-300 mono text-[10px] uppercase tracking-[0.2em] max-w-[200px] mx-auto leading-relaxed">Expect a response soon.</p>
+                                    </div>
+
+                                    {/* Breathable Form */}
+                                    <form id="contact-form" className="space-y-8">
+                                        <div className="space-y-6">
+                                            <div className="relative group">
+                                                <input type="text" name="name" required data-fs-field placeholder="IDENTITY_NAME" className="w-full p-6 rounded-2xl input-cyber text-xs mono tracking-widest" />
+                                            </div>
+                                            <div className="relative group">
+                                                <input type="email" name="email" required data-fs-field placeholder="EMAIL_ADDRESS" className="w-full p-6 rounded-2xl input-cyber text-xs mono tracking-widest" />
+                                            </div>
+                                            <div className="relative group">
+                                                <textarea name="message" required data-fs-field placeholder="MESSAGE_PAYLOAD..." rows="5" className="w-full p-6 rounded-2xl input-cyber text-xs mono tracking-widest resize-none"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <button type="submit" data-fs-submit-btn className="w-full py-6 bg-primary hover:bg-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed text-white rounded-2xl font-black text-xs tracking-[0.3em] transition-all uppercase shadow-2xl shadow-primary/40 active:scale-95">
+                                            Submit
+                                        </button>
+                                        <div className="text-[10px] text-red-400 mono mt-2 text-center" data-fs-error></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <footer className="py-12 text-center border-t border-white/5">
+                        <p className="mono text-[10px] text-slate-700 tracking-[0.5em]">NAHOM_ADDISU &copy; 2026</p>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    </script>
+</body>
+</html>
